@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños Ana Gabriela 💖</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --rose: #f3e7f5;
+            --pink-accent: #d4949e;
+            --gold: #d4af77;
+            --white: #fefcff;
+            --text-dark: #4a3f54;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: linear-gradient(135deg, #fef9fc 0%, #fce4f3 50%, #fef9fc 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .main-container {
+            background: var(--white);
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(212, 148, 158, 0.2);
+            max-width: 650px;
+            width: 100%;
+            padding: 50px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .main-container::before {
+            content: "✨";
+            position: absolute;
+            font-size: 80px;
+            opacity: 0.08;
+            top: -20px;
+            right: -20px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .main-container::after {
+            content: "💕";
+            position: absolute;
+            font-size: 80px;
+            opacity: 0.08;
+            bottom: -30px;
+            left: -20px;
+            animation: float 7s ease-in-out infinite 1s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(20px); }
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .header {
+            margin-bottom: 40px;
+        }
+
+        .greeting {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .name {
+            font-size: 2.2rem;
+            background: linear-gradient(135deg, var(--pink-accent), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-style: italic;
+            animation: slideIn 0.8s ease-out 0.2s backwards;
+        }
+
+        .age-display {
+            margin: 35px 0;
+            animation: popIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.4s backwards;
+        }
+
+        @keyframes popIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3) rotate(-180deg);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        .number {
+            font-size: 5rem;
+            font-weight: 900;
+            color: var(--pink-accent);
+            text-shadow: 0 4px 15px rgba(212, 148, 158, 0.3);
+            line-height: 1;
+        }
+
+        .age-text {
+            font-size: 1.2rem;
+            color: var(--pink-accent);
+            font-weight: 600;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .photo-section {
+            background: linear-gradient(135deg, rgba(243, 231, 245, 0.8), rgba(212, 148, 158, 0.1));
+            border: none;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 40px 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 350px;
+        }
+
+        .photo-section img {
+            max-width: 100%;
+            max-height: 400px;
+            border-radius: 16px;
+            box-shadow: 0 15px 45px rgba(212, 148, 158, 0.25), 0 0 1px rgba(212, 148, 158, 0.1);
+            object-fit: cover;
+            animation: fadeIn 0.8s ease-out;
+            border: 8px solid var(--white);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .messages {
+            margin: 40px 0;
+            animation: fadeInUp 1s ease-out 0.6s backwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message-item {
+            background: linear-gradient(135deg, var(--rose), rgba(212, 148, 158, 0.08));
+            border-left: 4px solid var(--gold);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            font-family: 'Georgia', serif;
+        }
+
+        .emoji {
+            font-size: 1.3rem;
+            margin-right: 8px;
+        }
+
+        .date-info {
+            font-size: 1.1rem;
+            color: var(--pink-accent);
+            font-weight: 600;
+            margin: 30px 0;
+            padding: 15px;
+            background: rgba(212, 148, 158, 0.08);
+            border-radius: 12px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+            animation: fadeInUp 1s ease-out 0.8s backwards;
+        }
+
+        button {
+            padding: 14px 32px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: 2px solid var(--pink-accent);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Georgia', serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--pink-accent), var(--gold));
+            color: var(--white);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 148, 158, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--pink-accent);
+        }
+
+        .btn-secondary:hover {
+            background: var(--rose);
+            transform: translateY(-3px);
+        }
+
+        .confetti-piece {
+            position: fixed;
+            pointer-events: none;
+            z-index: 999;
+            font-size: 2rem;
+        }
+
+        .footer-message {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--rose);
+            font-size: 0.95rem;
+            color: var(--pink-accent);
+            font-style: italic;
+        }
+
+        @media (max-width: 640px) {
+            .main-container {
+                padding: 35px 25px;
+            }
+
+            .greeting {
+                font-size: 2.5rem;
+            }
+
+            .name {
+                font-size: 1.6rem;
+            }
+
+            .number {
+                font-size: 3.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="content">
+            <div class="header">
+                <div class="greeting">¡Feliz Cumpleaños!</div>
+                <div class="name">Ana Gabriela Varón Piñeros</div>
+            </div>
+
+            <div class="age-display">
+                <div class="number">22</div>
+                <div class="age-text">AÑOS INCREÍBLES</div>
+            </div>
+
+            <div class="photo-section">
+                <img id="photoPreview" src="photo_cumpleaños.jpg" style="width: 100%; border-radius: 15px;">
+            </div>
+
+            <div class="date-info">
+                📅 21 de Mayo de 2026
+            </div>
+
+            <div class="messages">
+                <div class="message-item">
+                    <span class="emoji">💖</span>
+                    Hoy celebramos a una persona increíble. 22 años rodeada de gente que te adora.
+                </div>
+                <div class="message-item">
+                    <span class="emoji">✨</span>
+                    Eres esa amiga que hace que los días ordinarios se conviertan en aventuras extraordinarias.
+                </div>
+                <div class="message-item">
+                    <span class="emoji">🎉</span>
+                    Que este año esté lleno de risas, sorpresas y todos esos momentos que recordarás para siempre.
+                </div>
+                <div class="message-item">
+                    <span class="emoji">🌟</span>
+                    Mereces todo lo bueno del universo. ¡Espero que este año sea tu mejor versión!
+                </div>
+            </div>
+
+            <div class="cta-buttons">
+                <button class="btn-primary" onclick="generarConfeti()">🎊 ¡Celebra conmigo! 🎊</button>
+            </div>
+
+            <div class="footer-message">
+                Hecho con mucho cariño para ti en este día especial. 💕
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Confeti
+        function generarConfeti() {
+            const emojis = ['🎉', '💖', '✨', '🌟', '💕', '🎊', '🎈'];
+            
+            for (let i = 0; i < 60; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti-piece';
+                    confetti.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                    confetti.style.left = Math.random() * 100 + '%';
+                    confetti.style.top = '-50px';
+                    confetti.style.opacity = '1';
+                    document.body.appendChild(confetti);
+
+                    const duration = 3 + Math.random() * 2;
+                    const xMove = (Math.random() - 0.5) * 400;
+
+                    confetti.animate([
+                        {
+                            transform: 'translateY(0) translateX(0) rotate(0deg)',
+                            opacity: 1
+                        },
+                        {
+                            transform: `translateY(${window.innerHeight + 100}px) translateX(${xMove}px) rotate(${Math.random() * 720}deg)`,
+                            opacity: 0
+                        }
+                    ], {
+                        duration: duration * 1000,
+                        easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+                    });
+
+                    setTimeout(() => confetti.remove(), duration * 1000);
+                }, i * 30);
+            }
+        }
+
+        // Efecto de carga
+        window.addEventListener('load', () => {
+            console.log('¡Página cargada! Que disfrutes tu cumpleaños 💖');
+        });
+    </script>
+</body>
+</html>
